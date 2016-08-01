@@ -77,6 +77,126 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Hello-JS-week3-作業筆記" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <h3 href="/2016/08/01/Hello-JS-week3-作業筆記/" class="article-date">
+  <time datetime="2016-07-31T17:22:00.000Z" itemprop="datePublished">2016-08-01</time>
+</h3>
+    
+  </div>
+  <div class="article-inner">
+  <div class="curve-down">
+  <div class="fill-content">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/Hello-JS-week3-作業筆記/">Hello JS week3 作業筆記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h1 id="作業筆記"><a href="#作業筆記" class="headerlink" title="作業筆記"></a>作業筆記</h1><h2 id="Mocha-測試"><a href="#Mocha-測試" class="headerlink" title="Mocha 測試"></a>Mocha 測試</h2><p>Mocha 測試時，要利用 url 操作 CRUD  </p>
+<p>使用到 <code>sails.hooks.http.app</code>，分別使用 Get Post Put Delete Method<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//get 取得網頁數據</div><div class="line">let result = request(sails.hooks.http.app)</div><div class="line">             .get(/friend);</div><div class="line">//post 新增資料</div><div class="line">let result = request(sails.hooks.http.app)</div><div class="line">            .post(/friend/create)</div><div class="line">            .send(&#123;id: 1, name: &apos;yoo&apos;, email:&apos;hello@email.com&apos;&#125;);</div><div class="line">// put , delete 使用方式與 post 一樣</div></pre></td></tr></table></figure></p>
+<h2 id="修改-新增-route-policies"><a href="#修改-新增-route-policies" class="headerlink" title="修改,新增 route, policies"></a>修改,新增 route, policies</h2><p>參考網址<br><a href="http://sailsjs.org/documentation/reference/blueprint-api" target="_blank" rel="external">Blueprint API</a><br>參考預設的API行為<br><a href="http://sailsjs.org/documentation/reference/blueprint-api/destroy" target="_blank" rel="external">Destroy (Blueprint)</a><br>在操作Destroy時遇到問題，因此來查看原本預設的操作方式<br><a href="http://sailsjs.org/documentation/reference/request-req/req-param" target="_blank" rel="external">req.param()</a><br><a href="http://sailsjs.org/documentation/reference/request-req/req-params" target="_blank" rel="external">req.params()</a><br>在寫controller 行為時 request 所接收到的要求，<code>req.params[]</code> 能從中得到資料「參數」來進一步處理  </p>
+<hr>
+<h3 id="route-寫法"><a href="#route-寫法" class="headerlink" title="route 寫法"></a>route 寫法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// :id 這個寫法可以在 req.params[&apos;id&apos;] 取得對應的資料</div><div class="line">&apos;Delete /friend/:id&apos;:&apos;FriendController.destroy&apos;,</div></pre></td></tr></table></figure>
+<h3 id="config-policies-js"><a href="#config-policies-js" class="headerlink" title="config/policies.js"></a>config/policies.js</h3><p>恩…<br>將Controller所對應的method 寫入，並標明應該要接收到什麼參數回傳（應該是這樣沒錯…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// [] 表示允許傳回任何、或不回傳，無限制</div><div class="line">&apos;FriendController&apos;:&#123;</div><div class="line">  create: [],</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <div class="article-footer-content">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HelloJS/">HelloJS</a></li></ul>
+
+        <a data-url="http://tikka0910.github.io/2016/08/01/Hello-JS-week3-作業筆記/" data-id="circ327x50000qokxve3ngfyi" class="article-share-link">Share</a>
+        
+      </div>
+    </footer>
+  </div>
+  </div>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Hello-Js-Week3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <h3 href="/2016/07/31/Hello-Js-Week3/" class="article-date">
+  <time datetime="2016-07-31T06:29:03.000Z" itemprop="datePublished">2016-07-31</time>
+</h3>
+    
+  </div>
+  <div class="article-inner">
+  <div class="curve-down">
+  <div class="fill-content">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/31/Hello-Js-Week3/">Hello Js Week3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="課程大綱"><a href="#課程大綱" class="headerlink" title="課程大綱"></a>課程大綱</h2><ul>
+<li>Sails 介紹</li>
+<li>Heroku</li>
+<li>Angular.js Socket.io</li>
+</ul>
+<h2 id="上課心得"><a href="#上課心得" class="headerlink" title="上課心得"></a>上課心得</h2><p>本週的收穫依然非常的多，真的用盡心力的在專心聽課  </p>
+<p>快結束時真的是燃燒殆盡，但沒堅持到最後一刻（倒)，後面的Angular已經無法吸收    </p>
+<p>好險課程有錄影，可以複習  </p>
+<p>課程中第一次「真正」使用 HackPad 共筆，之前都只有開啟來看而已  </p>
+<p><a href="https://hackpad.com/Sails.js--FVQnarQ2RMw" target="_blank" rel="external">Sails上課共筆</a>  </p>
+<p>這次拼命、努力將課程內容筆記下來，也是本週如此燃燒的原因</p>
+<h3 id="Sails"><a href="#Sails" class="headerlink" title="Sails"></a>Sails</h3><p>從最基礎入門帶起，真的收獲良多，知道了controller預設的 method 是什麼  </p>
+<p>如何使用 Restful 操作 models ＣＲＵＤ  </p>
+<p>示範使用 ejs 建立頁面 表單來呈現、操作網頁流程  </p>
+<p>雖然看起來很基礎，但這對我來說獲得很多  </p>
+<p>像是 create 完成之後，redirect回原來網頁的「流程」…etc  </p>
+<p>ajax 的應用可以節省頻寬，因為接收的資料是只有變化的部分，不需要重新傳送整個頁面</p>
+<h3 id="Angular-Socket-io"><a href="#Angular-Socket-io" class="headerlink" title="Angular Socket.io"></a>Angular Socket.io</h3><p>Realtime 的概念有接收到，client 與 server 端保持連線，有變化時server端會傳送資訊  </p>
+<p>client接收到後呈現在網頁上面，就像是即時的呈現新資訊 Facebook就是這樣</p>
+<p>可以開啟網頁開發者工具，來查看連線，有其中一項一直保持著連線狀態</p>
+<p>socket.io的部分  </p>
+<p>需要自己重新看著影片做一次，最後上課的時候已經燃燒到無法思考了 囧</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <div class="article-footer-content">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HelloJS/">HelloJS</a></li></ul>
+
+        <a data-url="http://tikka0910.github.io/2016/07/31/Hello-Js-Week3/" data-id="circ327xa0001qokx7lpxsa4v" class="article-share-link">Share</a>
+        
+      </div>
+    </footer>
+  </div>
+  </div>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-HelloJs-Week2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <h3 href="/2016/07/23/HelloJs-Week2/" class="article-date">
@@ -168,9 +288,9 @@
     <footer class="article-footer">
       <div class="article-footer-content">
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HelloJs/">HelloJs</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HelloJS/">HelloJS</a></li></ul>
 
-        <a data-url="http://tikka0910.github.io/2016/07/23/HelloJs-Week2/" data-id="cira831r70000qtkxdz8fe780" class="article-share-link">分享到</a>
+        <a data-url="http://tikka0910.github.io/2016/07/23/HelloJs-Week2/" data-id="circ327xo0003qokx3ym35hsm" class="article-share-link">Share</a>
         
       </div>
     </footer>
@@ -190,9 +310,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">近期文章</h3>
+    <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/01/Hello-JS-week3-作業筆記/">Hello JS week3 作業筆記</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/31/Hello-Js-Week3/">Hello Js Week3</a>
+          </li>
         
           <li>
             <a href="/2016/07/23/HelloJs-Week2/">Hello Js Week2</a>
@@ -205,18 +333,18 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HelloJs/">HelloJs</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HelloJS/">HelloJS</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -250,7 +378,7 @@
 
 <!-- totop start -->
 <div id="totop">
-	<a title="返回顶部"></a>
+	<a title="To Top"></a>
 </div>
 <!-- totop end -->
 
